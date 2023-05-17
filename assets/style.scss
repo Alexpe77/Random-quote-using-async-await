@@ -6,6 +6,9 @@
 
 body {
     background-color: #e7d7c1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .top-title {
@@ -17,11 +20,33 @@ body {
 }
 
 q {
-    text-align: center;
-    font-family: 'Zeyada';
+    font-family: 'Patrick Hand';
     font-size: 30px;
 }
 
-#newQuoteBtn {
-    display: block;
+figcaption {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-style: italic;
+}
+
+#quoteImage {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 30%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-container {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    align-self: center;
+    #newQuoteBtn {
+        width: 300px;
+        height: 30px;
+    }
 }

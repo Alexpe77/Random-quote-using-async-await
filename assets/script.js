@@ -1,26 +1,27 @@
 const quoteElement = document.querySelector('q');
 const authorElement = document.querySelector('figcaption');
-const newQuoteBtn = document.createElement('button');
-newQuoteBtn.textContent = 'New Quote';
+const imgElement = document.getElementById('quoteImage');
 
+const newQuoteBtn = document.getElementById('newQuoteBtn');
 newQuoteBtn.addEventListener('click', fetchQuote);
 
 async function fetchQuote() {
     try {
         const response = await fetch ('https://thatsthespir.it/api');
         const data = await response.json();
-        console.log(data)
+        
         const quote = data.quote;
         const author = data.author;
+        const source = data.source;
+        const imageUrl = data.photo;
 
         quoteElement.textContent = quote;
         authorElement.textContent = `- ${author}`;
+        imgElement.src = imageUrl;
     }
     catch (error) {
         console.log('An error has occured', error)
     }
 }
-
-quoteElement.parentNode.insertBefore(newQuoteBtn, quoteElement);
 
 fetchQuote();
