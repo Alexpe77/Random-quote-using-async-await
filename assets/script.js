@@ -14,14 +14,23 @@ async function fetchQuote() {
         const author = data.author;
         const imageUrl = data.photo;
 
-        if (imageUrl) {
-            imgElement.src = imageUrl;
-        } else {
-            imgElement.src = './assets/img/cat.jpg';
-        }
-
+        let authorAge = 'Unknown';
+ 
+        imgElement.src = imageUrl || './assets/img/cat.jpg';
+        
         quoteElement.textContent = quote;
         authorElement.textContent = `- ${author}`;
+
+        const ageResponse = await fetch(`https://randomuser.me/api/?name=${encodeURIComponent(author)}`, {
+            mode: 'cors'
+          });
+          const ageData = await ageResponse.json();
+          const ageResults = ageData.results;
+          if (ageResults.length > 0) {
+            authorAge = ageResults[0].dob.age || 'Unknown';
+          }
+
+        document.querySelector('#authorAge').textContent = `Age: ${authorAge} years old`;
     }
     catch (error) {
         console.log('An error has occured', error)
