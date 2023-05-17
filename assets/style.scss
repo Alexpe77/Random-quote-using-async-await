@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e7d7c1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 800px;
+}
+
+.top-title {
+    text-align: center;
+    font-family: 'Licorice';
+    font-size: 40px;
+    font-style: italic;
+    background-color: #a78a7f;
+}
+
+q {
+    display: flex;
+    justify-content: center;
+    font-family: 'Patrick Hand';
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+figcaption {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-style: italic;
+    padding: 10px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#quoteImage {
+    margin: 0 auto;
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 50%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-container {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    align-self: center;
+    #newQuoteBtn {
+        width: 300px;
+        height: 30px;
+        cursor: pointer;
+    }
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+#loader::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
