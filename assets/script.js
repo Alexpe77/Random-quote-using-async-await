@@ -1,8 +1,7 @@
-const quoteElement = document.querySelector('q');
+const quoteElement = document.querySelector('p');
 const authorElement = document.querySelector('figcaption');
 const imgElement = document.getElementById('quoteImage');
 const loader = document.getElementById('loader');
-
 const newQuoteBtn = document.getElementById('newQuoteBtn');
 newQuoteBtn.addEventListener('click', fetchQuote);
 
