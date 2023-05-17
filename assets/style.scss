@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e7d7c1;
+}
+
+.top-title {
+    text-align: center;
+    font-family: 'Licorice';
+    font-size: 40px;
+    font-style: italic;
+    background-color: #a78a7f;
+}
+
+q {
+    text-align: center;
+    font-family: 'Zeyada';
+    font-size: 30px;
+}
+
+#newQuoteBtn {
+    display: block;
+}
