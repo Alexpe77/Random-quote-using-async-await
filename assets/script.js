@@ -12,12 +12,16 @@ async function fetchQuote() {
         
         const quote = data.quote;
         const author = data.author;
-        const source = data.source;
         const imageUrl = data.photo;
+
+        if (imageUrl) {
+            imgElement.src = imageUrl;
+        } else {
+            imgElement.src = './assets/img/cat.jpg';
+        }
 
         quoteElement.textContent = quote;
         authorElement.textContent = `- ${author}`;
-        imgElement.src = imageUrl;
     }
     catch (error) {
         console.log('An error has occured', error)
