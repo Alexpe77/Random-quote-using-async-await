@@ -6,7 +6,7 @@ It is very simple to use you only have to click on the *New Quote* button to dis
 
 ## Technology used
 
-HTML, CSS, JavaScript
+HTML, SCSS, JavaScript
 
 ## Screen shot
 
